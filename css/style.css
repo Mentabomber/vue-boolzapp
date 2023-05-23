@@ -45,6 +45,19 @@ aside nav.navbar{
     max-height: 100%;
 }
 
+/* notification bar */
+#notify-bar{
+    background-color: aqua;
+}
+#notify-bar img{
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: white;
+    color: aqua;
+    text-align: center;
+}
+
 /* aside search bar */
 #search-bar-container{
     width: 100%;
