@@ -53,7 +53,10 @@
                         <ul class="list-group list-group-flush">
                             <li v-for="(user, index) in users" class="list-group-item active-card">
                                 <img :src="user.avatar" :alt="user.name -avatar">
-                                <span>{{ user.messages[user.messages.length - 1] }}</span>
+                                <div>
+                                    <h6>{{ user.name }}</h6>
+                                    <span>{{ user.messages[user.messages.length - 1].text }}</span>
+                                </div>
                             </li>
 
                             

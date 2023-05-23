@@ -42,12 +42,22 @@ createApp({
                     replies: "", 
                 },
                 {
-                    name: "Giorgio",
-                    avatar: "img/Avatar.svg",
-                    messages: [  
-                                "Ciao",
-                                "Come stai?"
-                            ],
+                    name: "Maria",
+                    avatar: "img/Avatar-one.svg",
+                    messages:   [
+ 
+                        {
+                            text:"Ciao",
+                            textTime: 0,
+                            isFromMyself: false,
+                        },
+
+                        {
+                            text:"Come stai?",
+                            textTime: 0,
+                            isFromMyself: false,
+                        }
+                    ],
                     lastLogin: "",
                     replies: "", 
                 }
