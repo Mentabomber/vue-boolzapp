@@ -43,18 +43,25 @@ aside nav{
 
 aside nav.navbar{
     max-height: 100%;
+    border-bottom: 1px solid gray;
 }
 
 /* notification bar */
 #notify-bar{
     background-color: aqua;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
-#notify-bar img{
-    height: 30px;
-    width: 30px;
+
+
+#notify-bar i{
+    font-size: 25px;
+    padding: 15px;
+    margin: 10px;
     border-radius: 100%;
     background-color: white;
-    color: aqua;
+ 
     text-align: center;
 }
 
