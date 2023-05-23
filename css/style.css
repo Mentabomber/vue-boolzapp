@@ -76,8 +76,8 @@ aside nav.navbar{
     height: 76%;
 }
 
-div#user-cards-container ul{
-    overflow: auto;
+div#user-cards-container{
+    overflow-y : scroll;
 }
 aside div.card{
     width: 100%;
