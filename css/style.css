@@ -33,6 +33,7 @@ main nav.navbar{
 /* aside bar */
 aside{
     width: 30%;
+    height: 100%;
     background-color: white;
     
 }
@@ -61,7 +62,6 @@ aside nav.navbar{
     margin: 10px;
     border-radius: 100%;
     background-color: white;
- 
     text-align: center;
 }
 
@@ -72,7 +72,13 @@ aside nav.navbar{
 
 
 /* aside cards list */
+#user-cards-container{
+    height: 76%;
+}
 
+div#user-cards-container ul{
+    overflow: auto;
+}
 aside div.card{
     width: 100%;
     max-height: 100%;
@@ -81,3 +87,5 @@ aside div.card{
 .active-card{
     background-color: rgb(233,235,235);
 }
+
+
