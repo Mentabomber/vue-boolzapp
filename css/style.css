@@ -27,8 +27,23 @@ main{
 }
 
 main nav.navbar{
-    border-bottom: 1px gray solid;
+    height: 10%;
 }
+
+/* message tab */
+#message-tab{
+    height: 90%;
+    background-color: rgb(229,221,212);
+    border: 1px solid black;
+}
+.user-message{
+    background-color: greenyellow;
+}
+
+.friend-message{
+    background-color: white;
+}
+
 
 /* aside bar */
 aside{
@@ -40,6 +55,7 @@ aside{
 
 aside nav{
     width: 100%;
+    height: 10%;
 }
 
 aside nav.navbar{
@@ -73,7 +89,7 @@ aside nav.navbar{
 
 /* aside cards list */
 #user-cards-container{
-    height: 76%;
+    height: 74%;
 }
 
 div#user-cards-container{

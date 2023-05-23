@@ -19,20 +19,46 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+
             users:[
                 {
-                  name: "",
-                  avatar: "",
-                  message: "",
-                  lastLogin: "",
-                  replies: "",  
+                    name: "Gianni",
+                    avatar: "img/Avatar.svg",
+                    messages:   [
+ 
+                                    {
+                                        text:"Ciao",
+                                        textTime: 0,
+                                        isFromMyself: false,
+                                    },
+
+                                    {
+                                        text:"Come stai?",
+                                        textTime: 0,
+                                        isFromMyself: false,
+                                    }
+                                ],
+                    lastLogin: "",
+                    replies: "", 
+                },
+                {
+                    name: "Giorgio",
+                    avatar: "img/Avatar.svg",
+                    messages: [  
+                                "Ciao",
+                                "Come stai?"
+                            ],
+                    lastLogin: "",
+                    replies: "", 
                 }
             ]
         }
 
     },
     methods:{
+        newMessage(){
 
+        }
     }
 
 
