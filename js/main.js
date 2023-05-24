@@ -16,6 +16,7 @@
 
 const { createApp } = Vue;
 var DateTime = luxon.DateTime;
+let dt = DateTime.now();
 createApp({
     data(){
         return{
@@ -105,7 +106,7 @@ createApp({
             messageList.push({
 
                             text: "ok", 
-                            date:  DateTime, 
+                            date:  dt.toLocaleString(DateTime.DATETIME_MED), 
                             status: "received"
 
             })
@@ -137,11 +138,12 @@ createApp({
             if(this.newMessage.text.length !== 0){
                 usersFriendMessageList.push({
                             text: this.newMessage.text, 
-                            date:  DateTime, 
+                            date:  dt.toLocaleString(DateTime.DATETIME_MED), 
                             status: "sent"
                         })
 
-                setTimeout((autoMessage(usersFriendMessageList)), 1000);
+                setTimeout(() => { 
+                    this.autoMessage(usersFriendMessageList) }, 1000);
 
             }
             // else{ prova per mettere l'ultimo messaggio scritto da un altro  utente nella tab degli amici corrispondente
