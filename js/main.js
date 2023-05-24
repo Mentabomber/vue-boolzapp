@@ -101,6 +101,15 @@ createApp({
 
     },
     methods:{
+        autoMessage(messageList){
+            messageList.push({
+
+                            text: "ok", 
+                            date:  DateTime, 
+                            status: "received"
+
+            })
+        },
         selectUsersFriend(array, targetUser, index){
             this.activeUser = index;
             // console.log(this.activeUser);
@@ -131,6 +140,9 @@ createApp({
                             date:  DateTime, 
                             status: "sent"
                         })
+
+                setTimeout((autoMessage(usersFriendMessageList)), 1000);
+
             }
             // else{ prova per mettere l'ultimo messaggio scritto da un altro  utente nella tab degli amici corrispondente
             //     this.lastMessageSent = this.newMessage.text;
@@ -140,7 +152,8 @@ createApp({
             this.newMessage.text = "";
             this.newMessage.date = "";
             this.newMessage.status = "";
-        }
+        },
+        
     }
 
 
