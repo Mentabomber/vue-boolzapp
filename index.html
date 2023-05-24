@@ -65,7 +65,7 @@
                 
             </aside>
             <main>
-                
+                <!-- barra user's friend profile selected  -->
                 <nav class="navbar" style="background-color: white;">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
@@ -74,10 +74,13 @@
                         </a>
                     </div>
                 </nav>
+                <!-- messages tab of selected friend  -->
                 <div id="message-tab">
-                                        <!-- <div v-for="message in ">
-
-                    </div> -->
+                    <div v-for="message in messages">
+                        <div class="message-box received-messages">
+                            {{ message.text }}
+                        </div>
+                    </div> 
 
                     <div id="message-bar">
                         <i class="fa-regular fa-face-smile"></i>

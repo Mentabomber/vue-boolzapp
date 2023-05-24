@@ -28,13 +28,13 @@ createApp({
                     messages:   [
  
                                     {
-                                        text:"Ciao",
+                                        text:"Ciao, come stai?",
                                         date: '10/01/2020 15:30:55',
                                         status: "received",
                                     },
 
                                     {
-                                        text:"Come stai?",
+                                        text:"Tutto bene",
                                         date: '10/01/2020 15:50:00',
                                         status: 'sent'
                                     }
