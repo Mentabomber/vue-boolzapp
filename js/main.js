@@ -125,10 +125,10 @@ createApp({
             
             
         },
-        insertNewMessage(index){
-            console.log(index);
+        insertNewMessage(usersFriendMessageList){
+            // console.log((usersFriendMessageList);
             if(this.newMessage.text.length !== 0){
-                index.push({
+                usersFriendMessageList.push({
                             text: this.newMessage.text, 
                             date: Date.now(), 
                             status: "sent"

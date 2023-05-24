@@ -97,6 +97,7 @@ main{
     width: 70%;
     background-color: white;
     border-left: 1px grey solid;
+    position: relative;
 }
 
 main nav.navbar{
@@ -109,6 +110,7 @@ main nav.navbar{
     background-color: rgb(229,221,212);
     border: 1px solid black;
     position: relative;
+    overflow-y: auto;
 }
 .message-box{
     width: 250px;
