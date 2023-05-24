@@ -87,7 +87,8 @@
                             <span> {{ message.text }} </span>
                             <span class="message-time">{{ message.date}} </span>
                         </div>
-                        <pre>{{ activeUser }}</pre>
+                        <!-- <pre>{{ activeUser }}</pre> -->
+
 
                        
                     </div> 
@@ -96,7 +97,7 @@
                 </div>
                 <div id="message-bar">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" v-model="this.newMessage.text" @keyup.enter="insertNewMessage(this.users[0].messages)">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="this.newMessage.text" @keyup.enter="insertNewMessage(this.users[activeUser].messages)">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
                 

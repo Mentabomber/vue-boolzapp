@@ -103,7 +103,7 @@ createApp({
     methods:{
         selectUsersFriend(array, targetUser, index){
             this.activeUser = index;
-            console.log(this.activeUser);
+            // console.log(this.activeUser);
             console.log(array);
             console.log(targetUser);
             if (targetUser.visible === true) {
