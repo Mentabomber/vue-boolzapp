@@ -19,53 +19,89 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
-
+            activeUser: 0,
             users:[
-                {
+                {   
                     name: "Gianni",
                     avatar: "img/Avatar.svg",
+                    visible: true,
                     messages:   [
  
                                     {
                                         text:"Ciao",
-                                        textTime: 0,
-                                        isFromMyself: false,
+                                        date: '10/01/2020 15:30:55',
+                                        status: "received",
                                     },
 
                                     {
                                         text:"Come stai?",
-                                        textTime: 0,
-                                        isFromMyself: false,
+                                        date: '10/01/2020 15:50:00',
+                                        status: 'sent'
                                     }
                                 ],
-                    lastLogin: "",
-                    replies: "", 
                 },
-                {
+                {   
                     name: "Maria",
                     avatar: "img/Avatar-one.svg",
+                    visible: false,
                     messages:   [
  
                         {
                             text:"Ciao",
-                            textTime: 0,
-                            isFromMyself: false,
+                            date: '10/01/2020 15:30:55',
+                            status: "received",
                         },
 
                         {
                             text:"Come stai?",
-                            textTime: 0,
-                            isFromMyself: false,
+                            date: '10/01/2020 15:50:00',
+                            status: 'sent'
                         }
                     ],
-                    lastLogin: "",
-                    replies: "", 
+                },
+                {   
+                    name: "Filippo",
+                    avatar: "img/Avatar-two.svg",
+                    visible: false,
+                    messages:   [
+ 
+                        {
+                            text:"Come stai?",
+                            date: '10/01/2020 15:50:00',
+                            status: 'sent'
+                        },
+
+                        {
+                            text:"Come stai?",
+                            date: '10/01/2020 15:50:00',
+                            status: 'sent'
+                        }
+                    ],
                 }
             ]
         }
 
     },
     methods:{
+        selectUsersFriend(array, targetUser){
+            console.log(array);
+            console.log(targetUser);
+            if (targetUser.visible === true) {
+                return;
+            }
+            else{
+                targetUser.visible = true;
+                
+                array.forEach(user => {
+                    if (user.visible && targetUser !== user){
+                        user.visible = false;
+                    }
+                })
+            }
+            
+            
+            
+        },
         newMessage(){
 
         }

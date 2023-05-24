@@ -51,7 +51,7 @@
                     <!-- user's friend message tabs -->
                     <div id="user-cards-container" class="card" >
                         <ul class="list-group list-group-flush">
-                            <li v-for="(user, index) in users" class="list-group-item active-card">
+                            <li v-for="(user, index,) in users" :class=" user.visible === true ? 'active-card': ''" class="list-group-item" @click="selectUsersFriend(this.users, user)">
                                 <img :src="user.avatar" :alt="user.name -avatar">
                                 <div>
                                     <h6>{{ user.name }}</h6>
@@ -91,3 +91,5 @@
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
+
+
