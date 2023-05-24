@@ -15,10 +15,11 @@
 // Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
 
 const { createApp } = Vue;
-
+var DateTime = luxon.DateTime;
 createApp({
     data(){
         return{
+            lastMessageSent: "",
             activeUser: 0,
             newMessage: {
                 text:"",
@@ -59,18 +60,18 @@ createApp({
                     messages:   [
  
                         {
-                            text:"Ciao",
+                            text:"Ho voglia di andare a vedere un film",
                             date: '10/01/2020 15:30:55',
                             status: "received",
                         },
 
                         {
-                            text:"come stai?",
+                            text:"tu??",
                             date: '10/01/2020 15:50:00',
                             status: "received",
                         },
                         {
-                            text:"Tutto bene",
+                            text:"va bene andiamo",
                             date: '10/01/2020 15:50:00',
                             status: "sent",
                         },
@@ -83,18 +84,13 @@ createApp({
                     messages:   [
  
                         {
-                            text:"Ciao",
+                            text:"Andiamo a mangiare un gelato?",
                             date: '10/01/2020 15:30:55',
                             status: "received",
                         },
 
                         {
-                            text:"come stai?",
-                            date: '10/01/2020 15:50:00',
-                            status: "received",
-                        },
-                        {
-                            text:"Tutto bene",
+                            text:"ok",
                             date: '10/01/2020 15:50:00',
                             status: "sent",
                         },
@@ -106,7 +102,8 @@ createApp({
     },
     methods:{
         selectUsersFriend(array, targetUser, index){
-            activeUser = index;
+            this.activeUser = index;
+            console.log(this.activeUser);
             console.log(array);
             console.log(targetUser);
             if (targetUser.visible === true) {
@@ -121,19 +118,25 @@ createApp({
                     }
                 })
             }
-            
+
             
             
         },
         insertNewMessage(usersFriendMessageList){
             // console.log((usersFriendMessageList);
+            // console.log(this.activeUser);
             if(this.newMessage.text.length !== 0){
                 usersFriendMessageList.push({
                             text: this.newMessage.text, 
-                            date: Date.now(), 
+                            date:  DateTime, 
                             status: "sent"
                         })
             }
+            // else{ prova per mettere l'ultimo messaggio scritto da un altro  utente nella tab degli amici corrispondente
+            //     this.lastMessageSent = this.newMessage.text;
+            //     console.log(this.lastMessageSent);
+            // }
+
             this.newMessage.text = "";
             this.newMessage.date = "";
             this.newMessage.status = "";
