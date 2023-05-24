@@ -77,22 +77,25 @@
                 <!-- messages tab of selected friend  -->
                 <div id="message-tab">
                     <div v-for="(message, index) in users[activeUser].messages">
-                        <div class="message-box received-messages" v-if="users[index].messages[index].status === 'received'">
-                            {{ message.text }}
+                        <div class="message-box received-messages" v-if="message.status === 'received'">
+                            <span> {{ message.text }} </span>
+                            <span class="message-time">{{ message.date}} </span>
+
                         </div>
                         <div class="message-box sent-messages" v-else>
-                            {{ message.text }}
+                            <span> {{ message.text }} </span>
+                            <span class="message-time">{{ message.date}} </span>
                         </div>
-                        <pre>{{ users[index].messages[index].status }}</pre>
+                        <pre>{{ message.status }}</pre>
+
+                       
                     </div> 
-
-                    <div id="message-bar">
-                        <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
-
-
+                <div id="message-bar">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="this.newMessage.text" @keyup.enter="insertNewMessage(this.users[0].messages)">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                 
                 </div>
                 
             </main>

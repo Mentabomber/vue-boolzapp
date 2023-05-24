@@ -20,6 +20,11 @@ createApp({
     data(){
         return{
             activeUser: 0,
+            newMessage: {
+                text:"",
+                date: "",
+                status: "sent",
+            },
             users:[
                 {   
 
@@ -27,18 +32,24 @@ createApp({
                     avatar: "img/Avatar.svg",
                     visible: true,
                     messages:   [
- 
-                                    {
-                                        text:"Ciao, come stai?",
-                                        date: '10/01/2020 15:30:55',
-                                        status: "received",
-                                    },
 
-                                    {
-                                        text:"Tutto bene",
-                                        date: '10/01/2020 15:50:00',
-                                        status: 'sent'
-                                    }
+                        
+                        {
+                            text:"Ciao",
+                            date: '10/01/2020 15:30:55',
+                            status: "received",
+                        },
+
+                        {
+                            text:"come stai?",
+                            date: '10/01/2020 15:50:00',
+                            status: "received",
+                        },
+                        {
+                            text:"Tutto bene",
+                            date: '10/01/2020 15:50:00',
+                            status: "sent",
+                        },
                                 ],
                 },
                 {   
@@ -54,10 +65,15 @@ createApp({
                         },
 
                         {
-                            text:"Come stai?",
+                            text:"come stai?",
                             date: '10/01/2020 15:50:00',
-                            status: 'sent'
-                        }
+                            status: "received",
+                        },
+                        {
+                            text:"Tutto bene",
+                            date: '10/01/2020 15:50:00',
+                            status: "sent",
+                        },
                     ],
                 },
                 {   
@@ -67,16 +83,21 @@ createApp({
                     messages:   [
  
                         {
-                            text:"Come stai?",
-                            date: '10/01/2020 15:50:00',
-                            status: 'sent'
+                            text:"Ciao",
+                            date: '10/01/2020 15:30:55',
+                            status: "received",
                         },
 
                         {
-                            text:"Come stai?",
+                            text:"come stai?",
                             date: '10/01/2020 15:50:00',
-                            status: 'sent'
-                        }
+                            status: "received",
+                        },
+                        {
+                            text:"Tutto bene",
+                            date: '10/01/2020 15:50:00',
+                            status: "sent",
+                        },
                     ],
                 }
             ]
@@ -104,8 +125,18 @@ createApp({
             
             
         },
-        newMessage(){
-
+        insertNewMessage(index){
+            console.log(index);
+            if(this.newMessage.text.length !== 0){
+                index.push({
+                            text: this.newMessage.text, 
+                            date: Date.now(), 
+                            status: "sent"
+                        })
+            }
+            this.newMessage.text = "";
+            this.newMessage.date = "";
+            this.newMessage.status = "";
         }
     }
 
