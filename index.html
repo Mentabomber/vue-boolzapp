@@ -76,10 +76,14 @@
                 </nav>
                 <!-- messages tab of selected friend  -->
                 <div id="message-tab">
-                    <div v-for="(message) in users[activeUser].messages">
-                        <div class="message-box received-messages" v-if="">
+                    <div v-for="(message, index) in users[activeUser].messages">
+                        <div class="message-box received-messages" v-if="users[index].messages[index].status === 'received'">
                             {{ message.text }}
                         </div>
+                        <div class="message-box sent-messages" v-else>
+                            {{ message.text }}
+                        </div>
+                        <pre>{{ users[index].messages[index].status }}</pre>
                     </div> 
 
                     <div id="message-bar">
