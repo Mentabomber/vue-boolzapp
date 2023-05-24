@@ -22,6 +22,7 @@ createApp({
             activeUser: 0,
             users:[
                 {   
+
                     name: "Gianni",
                     avatar: "img/Avatar.svg",
                     visible: true,
@@ -83,7 +84,8 @@ createApp({
 
     },
     methods:{
-        selectUsersFriend(array, targetUser){
+        selectUsersFriend(array, targetUser, index){
+            activeUser = index;
             console.log(array);
             console.log(targetUser);
             if (targetUser.visible === true) {

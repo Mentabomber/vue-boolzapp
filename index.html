@@ -51,7 +51,7 @@
                     <!-- user's friend message tabs -->
                     <div id="user-cards-container" class="card" >
                         <ul class="list-group list-group-flush">
-                            <li v-for="(user, index,) in users" :class=" user.visible === true ? 'active-card': ''" class="list-group-item" @click="selectUsersFriend(this.users, user)">
+                            <li v-for="(user, index,) in users" :class=" user.visible === true ? 'active-card': ''" class="list-group-item" @click="selectUsersFriend(this.users, user, index)">
                                 <img :src="user.avatar" :alt="user.name -avatar">
                                 <div>
                                     <h6>{{ user.name }}</h6>
@@ -76,8 +76,8 @@
                 </nav>
                 <!-- messages tab of selected friend  -->
                 <div id="message-tab">
-                    <div v-for="message in messages">
-                        <div class="message-box received-messages">
+                    <div v-for="(message) in users[activeUser].messages">
+                        <div class="message-box received-messages" v-if="">
                             {{ message.text }}
                         </div>
                     </div> 
