@@ -105,15 +105,11 @@ createApp({
 
     },
     methods:{
-        changeHandler(){
-
-
-        },
 
         searchNames(){
 
             // const usersNames = this.users.map(user => {return user.name.toLowerCase()});
-            this.searchResult = this.users.filter(user => {return user.name.includes(this.searchInput.toLowerCase())})
+            this.searchResult = this.users.filter(user => {return user.name.toLowerCase().includes(this.searchInput.toLowerCase())})
             console.log(this.searchResult, this.searchInput);
         },
         autoMessage(messageList){
