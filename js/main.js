@@ -119,6 +119,17 @@ createApp({
             });
             return lastMessage;
         },
+        deleteSelectedMessageSent(message, array){
+            console.log(message);
+            
+
+            // let indexToRemove = array.findIndex(message => message)
+            // if (indexToRemove == - 1) {
+            //   array.splice(indexToRemove, 1)  
+            // }
+            // console.log(message);
+            
+        },
         searchNames(){
 
             // const usersNames = this.users.map(user => {return user.name.toLowerCase()});
