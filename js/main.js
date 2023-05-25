@@ -20,6 +20,7 @@ let dt = DateTime.now();
 createApp({
     data(){
         return{
+            loggedUserName: "Simone",
             searchInput: "",
             searchResult: [],
             lastMessageSent: "",
