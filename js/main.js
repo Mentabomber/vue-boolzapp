@@ -119,9 +119,14 @@ createApp({
             });
             return lastMessage;
         },
-        deleteSelectedMessageSent(message, array){
-            console.log(message);
-            
+
+
+
+
+        deleteSelectedMessageSent(index, array){
+            console.log("array log" , array);
+            array.splice(index, 1)
+            // message.splice(array, 1);
 
             // let indexToRemove = array.findIndex(message => message)
             // if (indexToRemove == - 1) {

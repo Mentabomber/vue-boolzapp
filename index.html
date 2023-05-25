@@ -104,7 +104,7 @@
                             <span class="message-time">{{ message.date}} </span>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Message info</a></li>
-                                <li><a class="dropdown-item" href="#" @click="deleteSelectedMessageSent(message, activeUser.messages)">Delete message</a></li>
+                                <li><a class="dropdown-item" href="#" @click="deleteSelectedMessageSent(index, activeUser.messages)">Delete message</a></li>
                               </ul>
                         </div>
                         <!-- <pre>{{ activeUser }}</pre> -->
@@ -117,7 +117,7 @@
                 </div>
                 <div id="message-bar">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" v-model="this.newMessage.text" @keyup.enter="insertNewMessage(this.users[activeUser].messages)">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="this.newMessage.text" @keyup.enter="insertNewMessage(activeUser.messages)">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
                 
