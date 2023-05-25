@@ -113,7 +113,7 @@ createApp({
             let lastMessage = "";
             user.messages.forEach(messaggio => {
                 if (messaggio.status === "received") {
-                    lastMessage = messaggio.text;
+                    lastMessage = messaggio.text + " " + messaggio.date;
                 }
                 
             });
