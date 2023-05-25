@@ -23,7 +23,7 @@ createApp({
             searchInput: "",
             searchResult: [],
             lastMessageSent: "",
-            activeUser: 0,
+            activeUser: {},
             newMessage: {
                 text:"",
                 date: "",
@@ -105,6 +105,10 @@ createApp({
 
     },
     methods:{
+        // creo questa funzione per settare activeUser sul primo oggetto dell'array users e poi tramite beforeMount lo runno all'inizio definendolo dopo la creazione di users
+        setDefaultActiveUser(){  
+            this.activeUser = this.users[0];
+        },
         getLastMessageReceivedFromUser(user){
             let lastMessage = "";
             user.messages.forEach(messaggio => {
@@ -130,8 +134,8 @@ createApp({
 
             })
         },
-        selectUsersFriend(array, targetUser, index){
-            this.activeUser = index;
+        selectUsersFriend(array, targetUser){
+            this.activeUser = targetUser;
             // console.log(this.activeUser);
             console.log(array);
             console.log(targetUser);
@@ -175,7 +179,9 @@ createApp({
             this.newMessage.status = "";
         },
         
+    },
+    beforeMount(){
+        this.setDefaultActiveUser()
     }
-
-
+        
 }).mount('#app')

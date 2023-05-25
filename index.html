@@ -93,7 +93,7 @@
                 </nav>
                 <!-- messages tab of selected friend con aggiunta di bootstrap dropdown -->
                 <div id="message-tab"> <!-- nome alternativo messages container -->
-                    <div v-for="(message, index) in users[activeUser].messages" class="dropdown">
+                    <div v-for="(message, index) in activeUser.messages" class="dropdown">
                         <div class="message-box received-messages" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" v-if="message.status === 'received'">
                             <span> {{ message.text }} </span>
                             <span class="message-time">{{ message.date}} </span>
