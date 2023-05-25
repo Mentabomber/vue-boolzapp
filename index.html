@@ -22,7 +22,7 @@
                         </a>
                     </div>
                 </nav>
-                    <!-- notification bar -->
+                    <!-- notification bar /snack bar -->
                     <div id="notify-bar">
                         <i class="fa-regular fa-bell-slash" style="color: #2beecd;"></i>
                         <div>
@@ -41,16 +41,32 @@
                     <div id="search-bar-container">
                         <!-- magari in seguito tolgo form e lo faccio più semplice perché non mi serve così al momento -->
                         <form class="d-flex" role="search">
-                            <button class="btn btn-outline-success" type="submit">
+                            <button class="btn btn-outline-success" type="button">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                            <input style="width: 100%;" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        </form>
+                            <input style="width: 100%;" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="searchInput" 
+                            @keyup="searchNames()"
+                            >
+                            <pre>{{ searchInput }}</pre>
+                        </form> 
                     </div>
                   
                     <!-- user's friend message tabs -->
+                    <!-- if this.searchResult !== undefined display searchResult esle display this.users -->
                     <div id="user-cards-container" class="card" >
-                        <ul class="list-group list-group-flush">
+                        <ul v-if="searchInput.length !== 0" class="list-group list-group-flush">
+                            <li v-for="(user, index,) in searchResult" :class=" user.visible === true ? 'active-card': ''" class="list-group-item" @click="selectUsersFriend(this.users, user, index)">
+                                <img :src="user.avatar" :alt="user.name -avatar">
+                                <div>
+                                    <h6>{{ user.name }}</h6>
+                                    <span v-if="user.messages.status === received">{{ user.messages[user.messages.length - 1].text }}</span>
+                                    
+                                </div>
+                            </li>
+
+                            
+                        </ul>
+                        <ul v-else class="list-group list-group-flush">
                             <li v-for="(user, index,) in users" :class=" user.visible === true ? 'active-card': ''" class="list-group-item" @click="selectUsersFriend(this.users, user, index)">
                                 <img :src="user.avatar" :alt="user.name -avatar">
                                 <div>
@@ -76,7 +92,7 @@
                     </div>
                 </nav>
                 <!-- messages tab of selected friend  -->
-                <div id="message-tab">
+                <div id="message-tab"> <!-- nome alternativo messages container -->
                     <div v-for="(message, index) in users[activeUser].messages" >
                         <div class="message-box received-messages" v-if="message.status === 'received'">
                             <span> {{ message.text }} </span>

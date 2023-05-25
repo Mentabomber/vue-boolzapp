@@ -20,6 +20,8 @@ let dt = DateTime.now();
 createApp({
     data(){
         return{
+            searchInput: "",
+            searchResult: [],
             lastMessageSent: "",
             activeUser: 0,
             newMessage: {
@@ -96,12 +98,24 @@ createApp({
                             status: "sent",
                         },
                     ],
-                }
+                },
+                
             ]
         }
 
     },
     methods:{
+        changeHandler(){
+
+
+        },
+
+        searchNames(){
+
+            // const usersNames = this.users.map(user => {return user.name.toLowerCase()});
+            this.searchResult = this.users.filter(user => {return user.name.includes(this.searchInput.toLowerCase())})
+            console.log(this.searchResult, this.searchInput);
+        },
         autoMessage(messageList){
             messageList.push({
 
@@ -141,7 +155,7 @@ createApp({
                             date:  dt.toLocaleString(DateTime.DATETIME_MED), 
                             status: "sent"
                         })
-
+  
                 setTimeout(() => { 
                     this.autoMessage(usersFriendMessageList) }, 1000);
 
