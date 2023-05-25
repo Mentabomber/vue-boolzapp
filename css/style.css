@@ -30,7 +30,7 @@ aside{
 }
 
 aside nav{
-    width: 100%;
+
     height: 10%;
 }
 
@@ -43,7 +43,7 @@ aside nav.navbar{
     height: 100%;
 }
 #user-profile-navbar img{
-    width: 15%;
+    width: 30%;
 }
 
 /* notification bar */
@@ -111,6 +111,22 @@ main nav.navbar{
     height: 10%;
 }
 
+
+/* user friend profile navbar  */
+
+#selected-user-friend-profile-chat-navbar{
+
+}
+#nav-user-selected-friend-content-container span{
+    font-size: 15px;
+}
+
+#selected-user-friend-profile-chat-navbar{
+    height: 100%;
+}
+#selected-user-friend-profile-chat-navbar img{
+    width: 15%;
+}
 /* message tab */
 #message-tab{
     height: 90%;

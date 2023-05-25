@@ -14,12 +14,17 @@
         <div id="container" class="d-flex">
             <aside>
                 <!-- user navbar da bootstrap -->
-                <nav class="navbar" style="background-color: white;">
+                <nav class="navbar flex-nowrap" style="background-color: white;">
                     <div id="user-profile-navbar" class="container-fluid ">
                         <a class="navbar-brand" href="#">
                         <img src="img/Avatar-four.svg" alt="user-photo"  class="d-inline-block align-text-top">
                         {{ loggedUserName }}
                         </a>
+                    </div>
+                    <div class="d-flex mx-2">
+                        <i class="fa-solid fa-circle-notch mx-2" style="color: #ababab;"></i>
+                        <i class="fa-solid fa-message mx-2" style="color: #ababab;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical mx-2" style="color: #ababab;"></i>
                     </div>
                 </nav>
                     <!-- notification bar /snack bar -->
@@ -84,14 +89,28 @@
             </aside>
             <main>
                 <!-- barra user's friend profile selected  -->
-                <nav class="navbar" style="background-color: white;">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                        Bootstrap
-                        </a>
+                <nav class="navbar flex-nowrap" style="background-color: white;">
+                    <div id="selected-user-friend-profile-chat-navbar" class="container-fluid">
+                        <div id="nav-user-selected-friend-content-container" class="d-flex">
+                            <img :src="activeUser.avatar" alt="user-photo"  class="d-inline-block align-text-top">
+                            <div >
+                                <a class="navbar-brand" href="#">
+                                    {{ activeUser.name }}
+                                    <span style="display: block;">Ultimo accesso oggi alle 12:00</span>
+                                    </a>
+                            </div>
+
+                        </div>
+                        
+
+                    </div>
+                    <div class="d-flex mx-2">
+                        <i class="fa-solid fa-magnifying-glass mx-2" style="color: #ababab;"></i>
+                        <i class="fa-solid fa-paperclip mx-2" style="color: #ababab;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical mx-2" style="color: #ababab;"></i>
                     </div>
                 </nav>
+                
                 <!-- messages tab of selected friend con aggiunta di bootstrap dropdown -->
                 <div id="message-tab"> <!-- nome alternativo messages container -->
                     <div v-for="(message, index) in activeUser.messages" class="dropdown">
