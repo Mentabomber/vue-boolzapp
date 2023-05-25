@@ -105,7 +105,16 @@ createApp({
 
     },
     methods:{
-
+        getLastMessageReceivedFromUser(user){
+            let lastMessage = "";
+            user.messages.forEach(messaggio => {
+                if (messaggio.status === "received") {
+                    lastMessage = messaggio.text;
+                }
+                
+            });
+            return lastMessage;
+        },
         searchNames(){
 
             // const usersNames = this.users.map(user => {return user.name.toLowerCase()});

@@ -59,7 +59,7 @@
                                 <img :src="user.avatar" :alt="user.name -avatar">
                                 <div>
                                     <h6>{{ user.name }}</h6>
-                                    <span v-if="user.messages.status === received">{{ user.messages[user.messages.length - 1].text }}</span>
+                                    <span v-if="user.messages.status === received">{{ getLastMessageReceivedFromUser( user )}}</span>
                                     
                                 </div>
                             </li>
@@ -71,7 +71,7 @@
                                 <img :src="user.avatar" :alt="user.name -avatar">
                                 <div>
                                     <h6>{{ user.name }}</h6>
-                                    <span v-if="user.messages.status === received">{{ user.messages[user.messages.length - 1].text }}</span>
+                                    <span v-if="user.messages.status === received">{{ getLastMessageReceivedFromUser( user ) }}</span>
                                     
                                 </div>
                             </li>
